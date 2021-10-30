@@ -12,11 +12,14 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@cypress/react": "^5.10.2",
+    "@cypress/vite-dev-server": "^2.2.0",
     "@types/micromatch": "^4.0.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/resolve": "^1.20.1",
     "@vitejs/plugin-react": "^1.0.0",
+    "cypress": "^8.7.0",
     "husky": "^7.0.4",
     "jest-haste-map": "^27.3.1",
     "lint-staged": "^11.2.6",
