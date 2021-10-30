@@ -7,8 +7,11 @@ const runRelatedCypressComponentTests = (stagedFiles) => findRelated(stagedFiles
   lookupRootDir: '.',
   lookupRoots: ['./src'],
   resolveExtensions: ['.ts', '.tsx', '.js', '.jsx'],
-}).then((files) => {
-  const testFiles = micromatch(files, cypressConfig.component.testFiles)
+}).then((relatedFiles) => {
+  const testFiles = micromatch(
+    [...relatedFiles, ...stagedFiles],
+    cypressConfig.component.testFiles
+  )
   if (!testFiles.length) return 'echo'
   return ['cypress run-ct', ...testFiles].join(' ')
 });
